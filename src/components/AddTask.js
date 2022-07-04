@@ -15,7 +15,7 @@ const AddTask = ({ showTasks, taskList }) => {
     if (!task || !dayTime) {
       alert("Please enter your task");
     } else {
-      tasks.push({
+      tasks.unshift({
         id: uuid(),
         isDone: false,
         task: task,

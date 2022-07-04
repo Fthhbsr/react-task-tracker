@@ -49,11 +49,11 @@
 .task-done {
   width: 30px;
   height: 5.5rem;
-  background-color: rgb(66, 12, 118);
-  color: rgb(66, 12, 118);
+  background-color: rgb(87, 32, 138);
+  color: rgb(87, 32, 138);
 }
 
 .isDone {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
 }
