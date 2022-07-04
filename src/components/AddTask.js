@@ -1,42 +1,36 @@
 import { v4 as uuid } from "uuid";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const AddTask = ({ showTasks }) => {
   const [dayTime, setDayTime] = useState();
   const [task, setTask] = useState();
   const [tasks, setTasks] = useState([]);
-  // const unique_id = uuid();
-  // console.log(unique_id);
+
+  useEffect(() => {
+    setTasks(tasks);
+  }, [tasks]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!task || !dayTime) {
       alert("Please enter your task");
     } else {
-      setTask(
-        tasks.push({
-          id: uuid(),
-          isDone: false,
-          task: task,
-          dayTime: dayTime,
-        })
-      );
+      tasks.push({
+        id: uuid(),
+        isDone: false,
+        task: task,
+        dayTime: dayTime,
+      });
+      setTasks(tasks);
 
-      //   //?Yeni olsuturulan todo'yu diziye sakla
-      //   todos.push(taskObject);
-
-      //?todos dizisinin son halini localStorage'e sakla
       localStorage.setItem("tasks", JSON.stringify(tasks));
-      console.log(tasks);
+
       setTask("");
       setDayTime("");
       showTasks();
-      //   createListElement(todoObject);
-      //   todoInput.value = "";
-      // }
     }
   };
-  console.log(tasks);
+
   return (
     <div className="container text-center mt-4">
       <form onSubmit={handleSubmit}>

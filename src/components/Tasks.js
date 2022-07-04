@@ -1,10 +1,12 @@
 import Task from "./Task";
 
-const Tasks = () => {
+const Tasks = ({ taskList, updateRender }) => {
+  //   console.log(taskList);
   return (
     <div>
-      Tasks
-      <Task />
+      {taskList?.map((task) => (
+        <Task key={task.id} {...task} updateRender={updateRender} />
+      ))}
     </div>
   );
 };
