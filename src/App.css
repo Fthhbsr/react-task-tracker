@@ -5,26 +5,39 @@
 }
 
 .App {
-  /* border: 2px solid red; */
   width: 400px;
-  background-color: rgb(194, 101, 151);
   padding: 1rem;
   margin: 2rem auto 0 auto;
+  border-radius: 2rem;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  box-shadow: 5px 5px 5px rgb(48, 48, 48);
 }
 
 .task {
-  border: 2px solid black;
+  /* border: 2px solid black; */
+  border-radius: 0.5rem;
   background-color: aliceblue;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1rem;
+  padding: 0 1rem 0 0;
   margin-top: 0.5rem;
+  overflow: hidden;
+  height: 5rem;
+  cursor: pointer;
+}
+
+.task:hover {
+  box-shadow: 5px 5px 5px lightblue;
 }
 
 .task-dayTime {
   /* border: 1px solid black; */
+  padding-left: 1rem;
+  padding-top: 0.5rem;
   cursor: pointer;
+  width: 280px;
+  overflow: hidden;
 }
 
 .task-close {
@@ -34,6 +47,13 @@
 }
 
 .task-done {
-  width: 50px;
+  width: 30px;
+  height: 5.5rem;
   background-color: rgb(66, 12, 118);
+  color: rgb(66, 12, 118);
+}
+
+.isDone {
+  display: flex;
+  justify-content: start;
 }

@@ -36,7 +36,7 @@ function App() {
   return (
     <div className="App">
       <Header handleTaskBarClick={handleTaskBarClick} showHide={showHide} />
-      {showHide && <AddTask showTasks={showTasks} />}
+      {showHide && <AddTask showTasks={showTasks} taskList={taskList} />}
       <Tasks taskList={taskList} updateRender={updateRender} />
     </div>
   );

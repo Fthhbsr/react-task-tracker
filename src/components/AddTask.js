@@ -1,10 +1,10 @@
 import { v4 as uuid } from "uuid";
 import { useState, useEffect } from "react";
 
-const AddTask = ({ showTasks }) => {
+const AddTask = ({ showTasks, taskList }) => {
   const [dayTime, setDayTime] = useState();
   const [task, setTask] = useState();
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(taskList);
 
   useEffect(() => {
     setTasks(tasks);
@@ -36,7 +36,7 @@ const AddTask = ({ showTasks }) => {
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="task" className="form-label">
-            Task
+            <h4>Task</h4>
           </label>
           <input
             type="text"
@@ -50,7 +50,7 @@ const AddTask = ({ showTasks }) => {
         </div>
         <div className="mb-3">
           <label htmlFor="dayTime" className="form-label">
-            {`Day & Time`}
+            <h4>{`Day & Time`}</h4>
           </label>
           <input
             type="datetime-local"
@@ -62,7 +62,7 @@ const AddTask = ({ showTasks }) => {
             required
           />
         </div>
-        <button className="btn btn-danger mb-4">Submit</button>
+        <button className="btn btn-primary mb-4">Submit</button>
       </form>
     </div>
   );

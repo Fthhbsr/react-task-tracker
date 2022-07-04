@@ -38,21 +38,21 @@ const Task = ({ id, isDone, task, dayTime, updateRender }) => {
 
   return (
     <div className="task">
-      {/* {done && <div className="task-done">dffg</div>} */}
-      {isDone ? (
+      <div className="isDone">
+        {isDone && <div className="task-done">.</div>}
         <div
-          className="task-dayTime text-decoration-line-through"
+          className={
+            isDone
+              ? "task-dayTime text-decoration-line-through"
+              : "task-dayTime"
+          }
           onClick={() => handleClick()}
         >
           <h4>{task}</h4>
           <p>{dayTime}</p>
         </div>
-      ) : (
-        <div className="task-dayTime" onClick={() => handleClick()}>
-          <h4>{task}</h4>
-          <p>{dayTime}</p>
-        </div>
-      )}
+      </div>
+
       <div>
         <AiOutlineClose
           className="task-close text-danger"
