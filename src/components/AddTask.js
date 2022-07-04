@@ -62,7 +62,7 @@ const AddTask = ({ showTasks, taskList }) => {
             required
           />
         </div>
-        <button className="btn btn-primary mb-4">Submit</button>
+        <button className="btn btn-primary mb-4">Save Task</button>
       </form>
     </div>
   );
